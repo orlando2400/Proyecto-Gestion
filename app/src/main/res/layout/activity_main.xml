@@ -19,6 +19,7 @@
         android:layout_marginTop="20dp"
         app:srcCompat="@drawable/boba" />
 
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
@@ -46,16 +47,16 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="35dp"
-        android:textColor="@color/white"
         android:layout_weight="4"
         android:background="@drawable/ovalo"
         android:drawableLeft="@drawable/aea"
-        android:paddingLeft="15dp"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="@string/password"
-        android:textColorHint="@color/white"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:paddingLeft="15dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/buttoningresar"
@@ -81,15 +82,15 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
         android:layout_weight="4"
-        android:textSize="19dp"
         android:background="@drawable/boton_redondo"
+        android:clickable="true"
+        android:onClick="irRegistrarse"
         android:text="Registrar"
-        app:backgroundTint="@color/cristhel"
-        android:onClick="irRegistrarse" android:clickable="true"/>
-
+        android:textSize="19dp"
+        app:backgroundTint="@color/cristhel" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -100,16 +101,16 @@
         android:gravity="center"
         >
 
-
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="57dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="100dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>

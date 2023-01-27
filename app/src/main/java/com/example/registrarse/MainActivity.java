@@ -50,9 +50,10 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "FacebookLogin";
     private LoginButton loginButton;
     private CallbackManager callbackManager;
-    private FirebaseAuth mAut;
+    private FirebaseAuth mAuth;
 
 
     private EditText correo;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContext(this)
                 .setMessage("Espere un momento")
                 .setCancelable(false).build();
-        mAut = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
         loginButton = findViewById(R.id.login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -92,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancel() {
-
+                        Log.d(TAG,"facebook:onCancel");
                     }
 
                     @Override
                     public void onError(FacebookException error) {
-
+                        Log.d(TAG,"facebook:onError", error);
                     }
                 });
             }
@@ -175,15 +176,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleFcebookAccessToken(AccessToken token) {
+        Log.d(TAG,"handlerFacebookAccessToken:" + token);
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
-        mAut.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            Log.d(TAG,"handlerFacebookAccessToken:");
+                            FirebaseUser user = mAuth.getCurrentUser();
                             ingresado();
                             Toast.makeText(MainActivity.this, "ingreso correctamente", Toast.LENGTH_SHORT).show();
                         } else {
+                            Log.w(TAG,"signInWithCredential:failure",task.getException());
                             Toast.makeText(MainActivity.this, "No pudo ingresar correctamente", Toast.LENGTH_SHORT).show();
                         }
                     }
