@@ -40,8 +40,9 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/ovalo"
                 android:hint="Nombres"
-                android:inputType="text"
-                android:padding="10dp" />
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:textAllCaps="true" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -54,7 +55,7 @@
                 android:ems="10"
                 android:textColor="@color/bebeciStaa"
                 android:hint="Apellidos"
-                android:inputType="textPersonName"
+                android:inputType="textCapWords"
                 android:textStyle="italic"
                 android:textColorHint="@color/realgrisaceo"
                 android:padding="10dp" />
