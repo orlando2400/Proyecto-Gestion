@@ -74,7 +74,8 @@
                 android:background="@drawable/ovalo"
                 android:hint="Edad"
                 android:padding="10dp"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:inputType="numberSigned" />
             <EditText
                 android:id="@+id/textInputPhone"
                 android:layout_width="match_parent"
