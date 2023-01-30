@@ -4,26 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Canino"
-    android:background="@drawable/pepeo">
+    android:background="@drawable/pepeo"
+    android:visibility="visible"
+    tools:context=".Canino">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
         android:text="JUEGA CON TU CANINO"
         android:textColor="#424242"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="413dp"
-        android:layout_height="316dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="412dp"
+        android:layout_height="263dp"
+        android:layout_marginTop="468dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,62 +39,81 @@
         android:id="@+id/titulo_cambiar_can"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="150dp"
         android:text="ESCONDITE"
-        android:textSize="18sp"
+        android:textColor="#000000"
+        android:textSize="22sp"
         android:textStyle="bold|italic"
-        android:textColor="#424242"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/boton_cambiar_can"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="159dp"
-        android:layout_marginRight="159dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="350dp"
         android:background="@color/cristhel"
-        android:layout_marginBottom="39dp"
-        android:onClick="Siguiente"
-        android:text="Siguiente"
+        android:onClick="Aleatorio"
+        android:text="¡Otro más!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
-        android:layout_width="363dp"
-        android:layout_height="169dp"
-        android:layout_marginBottom="106dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/scrollView3"
+        android:layout_width="365dp"
+        android:layout_height="216dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_cambiar_can"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo_cambiar_can">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/texto_cambiar_can"
-                android:layout_width="350dp"
-                android:layout_height="160dp"
-                android:layout_marginBottom="15dp"
+                android:layout_width="365dp"
+                android:layout_height="216dp"
                 android:paddingLeft="20dp"
                 android:paddingTop="15dp"
                 android:paddingRight="20dp"
                 android:text="¿Cuánto tardaría tu perro en encontrarte si te ocultas bien? Jugar al escondite con los canes es un plan divertido tanto dentro de casa, como en el parque o en cualquier lugar donde no sea peligroso.\n\n\tInstrucciones:\n\t\t 1.   Mantén quieto a tu compañero\n\t\t 2.	 Busca un lugar y escóndete\n\t\t 3.   Llámalo, así irá en tu búsqueda\n\nY no es sólo divertido, también es una forma de ejercitar el olfato de tu can, su capacidad de rastreo."
-                android:textSize="14sp"
                 android:textColor="#424242"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
 
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="47dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
